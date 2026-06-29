@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Downloader</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <div class="container">
+    <h1>Video Downloader</h1>
+    <p class="subtitle">Paste any video URL and choose quality to download</p>
+
+    <div class="input-group">
+      <input type="text" id="urlInput" placeholder="Enter video URL here..." />
+    </div>
+
+    <div class="quality-grid">
+      <label class="quality-card" data-quality="480">
+        <input type="radio" name="quality" value="480" />
+        <span class="qlabel">480p</span>
+        <span class="qdesc">Standard</span>
+      </label>
+      <label class="quality-card" data-quality="720">
+        <input type="radio" name="quality" value="720" checked />
+        <span class="qlabel">720p</span>
+        <span class="qdesc">HD Ready</span>
+      </label>
+      <label class="quality-card" data-quality="1080">
+        <input type="radio" name="quality" value="1080" />
+        <span class="qlabel">1080 HD</span>
+        <span class="qdesc">Full HD</span>
+      </label>
+      <label class="quality-card" data-quality="4K">
+        <input type="radio" name="quality" value="4K" />
+        <span class="qlabel">4K UHD</span>
+        <span class="qdesc">Ultra HD</span>
+      </label>
+    </div>
+
+    <div class="cookie-section">
+      <div class="cookie-header" id="cookieToggle">
+        <span>🍪 Cookies</span>
+        <span class="cookie-badge" id="cookieBadge">Not loaded</span>
+      </div>
+      <div class="cookie-body hidden" id="cookieBody">
+        <p class="cookie-help">Export cookies from your browser (Netscape format) and upload them for restricted sites.</p>
+        <div class="cookie-actions">
+          <label class="cookie-upload-btn">
+            Choose File
+            <input type="file" id="cookieInput" accept=".txt" hidden />
+          </label>
+          <button id="removeCookieBtn" class="cookie-remove-btn hidden">Remove</button>
+        </div>
+        <span class="cookie-filename" id="cookieFilename"></span>
+      </div>
+    </div>
+
+    <button id="downloadBtn">Download</button>
+
+    <div id="status" class="status hidden"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

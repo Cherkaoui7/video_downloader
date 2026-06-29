@@ -1,0 +1,6 @@
+flask
+yt-dlp
+requests
+selenium
+selenium-wire
+webdriver-manager

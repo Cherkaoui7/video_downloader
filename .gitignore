@@ -1,0 +1,7 @@
+downloads/
+cookies/
+__pycache__/
+*.pyc
+.DS_Store
+test_selenium.py
+extract_link.py

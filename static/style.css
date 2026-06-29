@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e0e0e0;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #f857a6, #ff5858);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 32px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 28px;
+}
+
+.input-group input:focus {
+  border-color: #f857a6;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.quality-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.03);
+  user-select: none;
+}
+
+.quality-card input {
+  display: none;
+}
+
+.quality-card .qlabel {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.quality-card .qdesc {
+  font-size: 0.75rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quality-card:has(input:checked) {
+  border-color: #f857a6;
+  background: rgba(248, 87, 166, 0.12);
+  box-shadow: 0 0 20px rgba(248, 87, 166, 0.15);
+}
+
+.quality-card:has(input:checked) .qlabel {
+  background: linear-gradient(90deg, #f857a6, #ff5858);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.quality-card:hover {
+  border-color: rgba(248, 87, 166, 0.5);
+  background: rgba(248, 87, 166, 0.06);
+}
+
+/* Cookie section */
+.cookie-section {
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cookie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.cookie-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cookie-badge {
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 88, 88, 0.15);
+  color: #ff5858;
+}
+
+.cookie-badge.loaded {
+  background: rgba(88, 255, 130, 0.15);
+  color: #58ff82;
+}
+
+.cookie-body {
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cookie-help {
+  font-size: 0.78rem;
+  color: #888;
+  margin-bottom: 12px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cookie-upload-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #ccc;
+}
+
+.cookie-upload-btn:hover {
+  border-color: #f857a6;
+  color: #fff;
+}
+
+.cookie-remove-btn {
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 88, 88, 0.4);
+  border-radius: 6px;
+  background: transparent;
+  color: #ff5858;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cookie-remove-btn:hover {
+  background: rgba(255, 88, 88, 0.12);
+}
+
+.cookie-filename {
+  display: block;
+  font-size: 0.75rem;
+  color: #58ff82;
+  margin-top: 8px;
+  text-align: left;
+  word-break: break-all;
+}
+
+/* Download button */
+#downloadBtn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f857a6, #ff5858);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+#downloadBtn:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+#downloadBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.status.error {
+  background: rgba(255, 88, 88, 0.15);
+  color: #ff5858;
+}
+
+.status.success {
+  background: rgba(88, 255, 130, 0.15);
+  color: #58ff82;
+}
+
+.status.info {
+  background: rgba(88, 170, 255, 0.15);
+  color: #58aaff;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
